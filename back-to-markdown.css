@@ -19,7 +19,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
 IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 */
 
-* { font-family:monospace; font-size:1em; border:0; margin:0; padding:0; list-style:none; font-weight:normal; }
+* { font-family:monospace; font-size:1.5vh/*1em*/; border:0; margin:0; padding:0; list-style:none; font-weight:normal; }
 h1, h2, h3, h4, h5, h6, ul, ol, p, pre { margin-bottom:1em }
 strong, b { font-weight: bold }
 em, i { font-style: italic }
