@@ -43,7 +43,7 @@ h1 {
     color: aqua;
 }
 
-p::before { content: "pionaiki "; color: gray }
+p::before { content: "pionaiki "/*This should be changed of course*/; color: gray }
 p {
     font-size: 2vh;
 }
