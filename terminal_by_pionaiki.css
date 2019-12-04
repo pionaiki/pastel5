@@ -1,0 +1,35 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    margin: 4%;
+}
+
+h1::before { content: "> "; color: white }
+h1 {
+    font-size: 2vh;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.who {
+    color: green;
+}
+.where {
+    color: aqua;
+}
+
+p::before { content: "pionaiki "; color: gray }
+p {
+    font-size: 2vh;
+}
+
+a:hover::before { content: "cd "; color: white }
+a.no-cd:hover::before { content: ""; color: white }
+a {
+    text-decoration: none;
+    color: aqua;
+}
+a.no-color {
+    color: white;
+}
