@@ -56,7 +56,7 @@ h1 {
 }
 
 p::before { content: "pionaiki "/*This should be changed of course*/; color: gray }
-p.no-user::before { content: ""; color: gray }
+p.no-user::before { content: "# "; color: gray }
 p {
     font-size: 2vh;
 }
