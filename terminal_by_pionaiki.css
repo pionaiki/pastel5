@@ -29,6 +29,18 @@ body {
     margin: 4%;
 }
 
+i.info {
+    color: gray;
+}
+
+@keyframes blinking {
+    0% {color: white;}
+    50% {color: white;}
+    51% {color: black;}
+    100% {color: black;}
+}
+b.cursor::before { content: "_"; animation: blinking 1s infinite; }
+
 h1::before { content: "> "; color: white }
 h1 {
     font-size: 2vh;
@@ -44,16 +56,13 @@ h1 {
 }
 
 p::before { content: "pionaiki "/*This should be changed of course*/; color: gray }
+p.no-user::before { content: ""; color: gray }
 p {
     font-size: 2vh;
 }
 
-a:hover::before { content: "cd "; color: white }
-a.no-cd:hover::before { content: ""; color: white }
-a {
+a.folder:hover::before { content: "cd "; color: white }
+a.folder {
     text-decoration: none;
     color: aqua;
-}
-a.no-color {
-    color: white;
 }
