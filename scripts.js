@@ -12,5 +12,5 @@ function mailme() {
     var firstn = "mateusz.mati"
     var secondn = "sokolski"
     var u = firstn + dot + secondn;
-    document.write("<a class='no-cd' href=" + "mail" + "to:" + u + arr + d + dot + t + ">" + "email me" + "</a>");
+    document.write("<a class='folder' href=" + "mail" + "to:" + u + arr + d + dot + t + ">" + "email me" + "</a>");
 }
