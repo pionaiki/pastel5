@@ -1,2 +1,0 @@
-# pionaiki
-My personal website.

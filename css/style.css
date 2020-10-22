@@ -1,0 +1,25 @@
+body {
+    background-color: #f0f8ff;
+    overflow: hidden;
+}
+canvas {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.container {
+    z-index: 10;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
