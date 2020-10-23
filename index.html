@@ -4,6 +4,12 @@
         <title>Martha Sokolska</title>
         <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
         <link rel='stylesheet' type='text/css' href='css/style.css'>
+        <script>
+        	if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
+        			alert("Mobile version in production.");
+        			window.location = "https://m.pionaiki.com";
+        	}
+        </script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js'></script>
         <script>window.p5 || console.info('Cannot connect to CDN, using self-hosted js file.'); document.write("<script src='js/p5.min.js'><\/script>")</script>
         <script>window.p5 || console.error('Cannot load p5.min.js')</script>
