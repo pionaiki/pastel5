@@ -11,15 +11,16 @@ function setup() {
     bgColor = color(240, 248, 255); //#f0f8ff
     colorMode(HSL, 360, 100, 100, 1);
     
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < windowWidth/10; i++) {
         shapes[i] = new shape();
     }
 }
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
-    for (let i = 0; i < shapes.length; i++) {
-        shapes[i].position = createVector(random(0, windowWidth), random(0, windowHeight));
+    shapes = [];
+    for (let i = 0; i < windowWidth/10; i++) {
+        shapes[i] = new shape();
     }
 }
 
