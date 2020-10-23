@@ -1,25 +1,82 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     background-color: #f0f8ff;
-    overflow: hidden;
+    overflow-x: hidden;
+    /*overflow: hidden;*/
+    scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #bbbbbb;
+    border-radius: 10px;
 }
 canvas {
     display: block;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     margin: 0;
     width: 100vw;
     height: 100vh;
 }
+
 .container {
     z-index: 10;
     display: block;
-    overflow: hidden;
     position: absolute;
     left: 0;
     top: 0;
     margin: 0;
     width: 100vw;
+    min-height: 100vh;
+}
+.con {
+    z-index: inherit;
+    display: block;
+    position: absolute;
+    left: 0;
+    margin: 0;
+    width: 100vw;
     height: 100vh;
+}
+.block {
+    z-index: inherit;
+    display: block;
+    position: absolute;
+    margin: 0;
+    margin-bottom: 20vh;
+}
+.intro {
+    width: 60vw;
+    height: 60vh;
+    left: 20vw;
+    top: 20vh;
+    background-color: hsla(300, 70%, 75%, 0.8);
+}
+.contact {
+    width: 60vw;
+    height: 60vh;
+    left: 20vw;
+    top: 120vh;
+    background-color: hsla(300, 70%, 75%, 0.8);
+}
+
+p {
+    color: #f0f8ff;
+    margin-top: 1px;
+    font-size: 1vw;
+}
+h1 {
+    color: #f0f8ff;
+    margin-bottom: 0;
+    font-size: 6vw;
 }

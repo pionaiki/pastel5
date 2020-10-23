@@ -2,6 +2,7 @@ let shapes = [];
 let shapeTypes = ['circle', 'line', 'square', 'triangle'];
 let range = 60;
 let bgColor;
+let scrollDelta;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -28,7 +29,6 @@ function draw() {
     background(bgColor);
     noFill();
     strokeWeight(2);
-    stroke(color(0, 0 , 0, 0.1)); line(0,0,width,height); //debug
     for (let i = 0; i < shapes.length; i++) {
         shapes[i].refresh();
         shapes[i].draw();
@@ -44,6 +44,7 @@ class shape {
         this.position = createVector(random(0, windowWidth), random(0, windowHeight));
         this.position.new;
         this.velocity = createVector(random(-1, 1), random(-1, 1));
+        this.velocity.new;
         this.velocity.limit(0.04);
 
         if (this.shape == 'circle') {
@@ -63,14 +64,6 @@ class shape {
             shapes[i].position.new = shapes[i].position;
         }
         let a = createVector(0, 0);
-        /*for (let other of shapes) {
-            if (other != this && this.position.dist(other.position) < range*5) {
-                a.add(this.position);
-                a.sub(other.position);
-                a.div(sq(this.position.dist(other.position)));
-                a.mult(10);
-            }
-        }*/
         if (this.position.x < range/6) {
             a.x += 0.01;
         }
@@ -91,14 +84,20 @@ class shape {
         a.mult(0);
         let mouse = createVector(mouseX, mouseY);
         if (this.position.dist(mouse) < range * 2) {
-            a.add(this.position);
-            a.sub(mouse);
+            if (mouseIsPressed) {
+                a.sub(this.position);
+                a.add(mouse);
+            }
+            else {
+                a.add(this.position);
+                a.sub(mouse);
+            }
             a.div(sq(this.position.dist(mouse)));
             a.mult(10);
             a.limit(1);
         }
-        this.velocity.add(a);
 
+        this.velocity.add(a);
         this.position.new.add(this.velocity);
     }
     syncOldNew() {
@@ -152,7 +151,6 @@ class shape {
             steering.div(total);
             steering.setMag(4);
             steering.sub(this.velocity);
-            //steering.limit(this.maxForce);
         }
         return steering;
       }
