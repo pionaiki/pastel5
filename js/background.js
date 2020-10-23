@@ -42,6 +42,7 @@ class shape {
         this.color = color(random(0, 360), 90, 75);
 
         this.position = createVector(random(0, windowWidth), random(0, windowHeight));
+        this.position.new;
         this.velocity = createVector(random(-1, 1), random(-1, 1));
         this.velocity.limit(0.04);
 
@@ -58,14 +59,18 @@ class shape {
         }
     }
     refresh() {
+        for (let i = 0; i < shapes.length; i++) {
+            shapes[i].position.new = shapes[i].position;
+        }
         let a = createVector(0, 0);
-        for (let other of shapes) {
-            if (other != this && this.position.dist(other.position) < range) {
+        /*for (let other of shapes) {
+            if (other != this && this.position.dist(other.position) < range*5) {
                 a.add(this.position);
                 a.sub(other.position);
                 a.div(sq(this.position.dist(other.position)));
+                a.mult(10);
             }
-        }
+        }*/
         if (this.position.x < range/6) {
             a.x += 0.01;
         }
@@ -78,9 +83,11 @@ class shape {
         if (this.position.y > windowHeight - range/6) {
             a.y -= 0.01;
         }
+        a.add(this.separation(shapes));
+
         this.velocity.add(a);
         this.velocity.limit(0.1);
-
+        
         a.mult(0);
         let mouse = createVector(mouseX, mouseY);
         if (this.position.dist(mouse) < range * 2) {
@@ -88,11 +95,14 @@ class shape {
             a.sub(mouse);
             a.div(sq(this.position.dist(mouse)));
             a.mult(10);
-            //a.limit(1);
+            a.limit(1);
         }
         this.velocity.add(a);
 
-        this.position.add(this.velocity);
+        this.position.new.add(this.velocity);
+    }
+    syncOldNew() {
+        this.position = this.position.new;
     }
     draw() {
         stroke(this.color);
@@ -121,4 +131,29 @@ class shape {
             pop();
         }
     }
+    separation(others) {
+        let steering = createVector();
+        let total = 0;
+        for (let other of others) {
+            let d = dist(
+            this.position.x,
+            this.position.y,
+            other.position.x,
+            other.position.y
+            );
+            if (other != this && d < range) {
+                let difference = p5.Vector.sub(this.position, other.position);
+                difference.div(d * d);
+                steering.add(difference);
+                total++;
+            }
+        }
+        if (total > 0) {
+            steering.div(total);
+            steering.setMag(4);
+            steering.sub(this.velocity);
+            //steering.limit(this.maxForce);
+        }
+        return steering;
+      }
 }
