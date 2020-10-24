@@ -59,7 +59,7 @@ canvas {
     width: 100vw;
     height: 100vh;
 }
-.big {
+.medium {
     z-index: inherit;
     display: block;
     margin: 0;

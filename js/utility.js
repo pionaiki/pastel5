@@ -33,6 +33,8 @@ function startup() {
     document.location.hash = 'intro';
     document.getElementById('html').style.cssText = '';
     if (IDs.indexOf(originalID) > 0) {
-        document.location.hash = originalID;
+        setTimeout(function(){
+            document.location.hash = originalID;
+        }, 400);
     }
 }
