@@ -4,7 +4,6 @@ html {
 body {
     background-color: #f0f8ff;
     overflow-x: hidden;
-    overflow: hidden;
     scrollbar-width: thin;
 }
 ::-webkit-scrollbar {
@@ -29,6 +28,17 @@ canvas {
     height: 100vh;
 }
 
+.no-js-warning {
+    z-index: 20;
+    display: block;
+    position: fixed;
+    left: 2vh;
+    top: 2vh;
+    background-color: hsla(360, 100%, 70%, 1);
+    color: #f0f8ff;
+    padding: 10px;
+    border-radius: 100vh;
+}
 .container {
     z-index: 10;
     display: block;
@@ -39,44 +49,42 @@ canvas {
     width: 100vw;
     min-height: 100vh;
 }
-.con {
+.slide {
     z-index: inherit;
     display: block;
-    position: absolute;
+    position: relative;
     left: 0;
+    top: 0;
     margin: 0;
     width: 100vw;
     height: 100vh;
 }
-.block {
+.big {
     z-index: inherit;
     display: block;
-    position: absolute;
     margin: 0;
-    margin-bottom: 20vh;
-}
-.intro {
-    width: 60vw;
+    position: absolute;
+    width: 50vw;
     height: 60vh;
-    left: 20vw;
+    left: 25vw;
     top: 20vh;
-    background-color: hsla(300, 70%, 75%, 0.8);
-}
-.contact {
-    width: 60vw;
-    height: 60vh;
-    left: 20vw;
-    top: 120vh;
     background-color: hsla(300, 70%, 75%, 0.8);
 }
 
 p {
     color: #f0f8ff;
-    margin-top: 1px;
     font-size: 1vw;
 }
 h1 {
     color: #f0f8ff;
-    margin-bottom: 0;
+    margin: 0;
     font-size: 6vw;
 }
+.center-y {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }

@@ -6,30 +6,65 @@
         <link rel='stylesheet' type='text/css' href='css/style.css'>
         <script>
         	if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
-        		alert("Mobile version in production."); //Production
-        		window.location = "https://m.pionaiki.com";
+        		alert('Mobile version in production.'); //Production
+        		window.location = 'https://m.pionaiki.com';
         	}
         </script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js'></script>
-        <script>window.p5 || console.info('Cannot connect to CDN, using self-hosted js file.'); document.write("<script src='js/p5.min.js'><\/script>")</script>
+        <script>
+        if (!window.p5) {
+            console.info('Cannot connect to CDN, using self-hosted js file.');
+            document.write("<script src='js/p5.min.js'><\/script>");
+        }
+        </script>
         <script>window.p5 || console.error('Cannot load p5.min.js')</script>
         <script src='js/background.js'></script>
-        <script src='js/scroll.js'></script>
-        <script>document.location.hash = 'intro';</script>
+        <script src='js/utility.js'></script>
     </head>
-    <body>
+    <body id='body'>
+        <script>
+            document.getElementById('body').style.overflow = 'hidden';
+            //TODO: Make a warning that JS is disabled.
+        </script>
+        <div class='no-js-warning' id='no-js-warning'>
+            Please enable javascript
+        </div>
+        <script>
+            if (noJSCheck()) {
+                document.getElementById('no-js-warning').remove();
+            }
+        </script>
         <div class='container' id='container'>
-            <div style="top: 0;" class="con" id="intro"><div class="block intro">
-                <center>
-                    <p>
-                        <h1><u>Martha Sokolska</u></h1>
-                        <p style="letter-spacing: 0.4vw;">HIGH SCHOOL STUDENT, PROGRAMMER</p>
-                    </p>
-                </center>
+            <div class='slide' id='intro'>
+                <div class='block big'>
+                <div class="center-y">
+                    <center>
+                        <p>
+                            <h1><u>Martha Sokolska</u></h1>
+                            <p style='letter-spacing: 0.4vw;'>HIGH SCHOOL STUDENT, PROGRAMMER</p>
+                        </p>
+                    </center>
+                </div>
             </div></div>
-            <div style="top: 100vh;" class="con" id="contact"></div><div class="block contact">
+            <div class='slide' id='x1'><div class='block big'>
+
+            </div></div>
+            <div class='slide' id='x2'><div class='block big'>
+
+            </div></div>
+            <div class='slide' id='contact'><div class='block big'>
 
             </div></div>
         </div>
+        <script>
+            if (IDs.indexOf(urlID) < 0) {
+                document.location.hash = 'intro';
+            }
+            //Repositioning:
+            document.getElementById('intro').style.cssText = 'position: absolute; left: 0; top: 0';
+            document.getElementById('x1').style.cssText = 'position: absolute; left: 50vw; top: 100vh';
+            document.getElementById('x2').style.cssText = 'position: absolute; left: 0; top: 200vh';
+            document.getElementById('contact').style.cssText = 'position: absolute; left: 50vw; top: 300vh';
+        </script>
     </body>
 </html>
