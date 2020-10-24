@@ -38,3 +38,7 @@ function startup() {
         }, 400);
     }
 }
+function myLoop() {
+    /*urlID = document.location.hash.substring(document.location.hash.indexOf('#') + 1);
+    document.location.hash = urlID;*/
+}

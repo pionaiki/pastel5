@@ -35,6 +35,8 @@ function draw() {
         shapes[i].refresh();
         shapes[i].draw();
     }
+
+    myLoop();
 }
 
 class shape {
