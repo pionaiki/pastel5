@@ -18,3 +18,21 @@ function mouseWheel(event) {
 function noJSCheck() {
     return true;
 }
+
+function startup() {
+    document.getElementById('body').style.overflow = 'hidden';
+
+    //Repositioning:
+    document.getElementById('intro').style.cssText = 'position: absolute; left: 0; top: 0';
+    document.getElementById('x1').style.cssText = 'position: absolute; left: 50vw; top: 100vh';
+    document.getElementById('x2').style.cssText = 'position: absolute; left: 0; top: 200vh';
+    document.getElementById('contact').style.cssText = 'position: absolute; left: 50vw; top: 300vh';
+
+    let originalID = urlID;
+    document.getElementById('html').style.cssText = 'scroll-behavior: auto;';
+    document.location.hash = 'intro';
+    document.getElementById('html').style.cssText = '';
+    if (IDs.indexOf(originalID) > 0) {
+        document.location.hash = originalID;
+    }
+}

@@ -15,6 +15,8 @@ function setup() {
     for (let i = 0; i < windowWidth/10; i++) {
         shapes[i] = new shape();
     }
+
+    startup();
 }
 
 function windowResized() {

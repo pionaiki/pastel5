@@ -1,5 +1,5 @@
 <meta charset='UTF-8'>
-<html>
+<html id='html'>
     <head>
         <title>Martha Sokolska</title>
         <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
@@ -22,10 +22,6 @@
         <script src='js/utility.js'></script>
     </head>
     <body id='body'>
-        <script>
-            document.getElementById('body').style.overflow = 'hidden';
-            //TODO: Make a warning that JS is disabled.
-        </script>
         <div class='no-js-warning' id='no-js-warning'>
             Please enable javascript
         </div>
@@ -33,6 +29,7 @@
             if (noJSCheck()) {
                 document.getElementById('no-js-warning').remove();
             }
+            document.getElementById('body').style.overflow = 'hidden';
         </script>
         <div class='container' id='container'>
             <div class='slide' id='intro'>
@@ -57,14 +54,7 @@
             </div></div>
         </div>
         <script>
-            if (IDs.indexOf(urlID) < 0) {
-                document.location.hash = 'intro';
-            }
-            //Repositioning:
-            document.getElementById('intro').style.cssText = 'position: absolute; left: 0; top: 0';
-            document.getElementById('x1').style.cssText = 'position: absolute; left: 50vw; top: 100vh';
-            document.getElementById('x2').style.cssText = 'position: absolute; left: 0; top: 200vh';
-            document.getElementById('contact').style.cssText = 'position: absolute; left: 50vw; top: 300vh';
+            
         </script>
     </body>
 </html>
