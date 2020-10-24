@@ -153,5 +153,5 @@ class shape {
             steering.sub(this.velocity);
         }
         return steering;
-      }
+    }
 }
