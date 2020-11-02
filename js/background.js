@@ -7,12 +7,12 @@ let scrollDelta;
 function setup() {
     createCanvas(windowWidth, windowHeight);
     rectMode(CENTER);
-    
+
     colorMode(RGB, 255);
     bgColor = color(240, 248, 255); //#f0f8ff
     colorMode(HSL, 360, 100, 100, 1);
-    
-    for (let i = 0; i < windowWidth/10; i++) {
+
+    for (let i = 0; i < windowWidth / 10; i++) {
         shapes[i] = new shape();
     }
 
@@ -22,7 +22,7 @@ function setup() {
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
     shapes = [];
-    for (let i = 0; i < windowWidth/10; i++) {
+    for (let i = 0; i < windowWidth / 10; i++) {
         shapes[i] = new shape();
     }
 }
@@ -35,8 +35,6 @@ function draw() {
         shapes[i].refresh();
         shapes[i].draw();
     }
-
-    myLoop();
 }
 
 class shape {
@@ -56,11 +54,11 @@ class shape {
         }
         else if (this.shape == 'square' || this.shape == 'triangle') {
             this.a = random(10, 25);
-            this.deg = random(0, 2*PI);
+            this.deg = random(0, 2 * PI);
         }
         else if (this.shape == 'line') {
             this.r = random(20, 40);
-            this.deg = random (0, 2*PI);
+            this.deg = random(0, 2 * PI);
         }
     }
     refresh() {
@@ -68,23 +66,23 @@ class shape {
             shapes[i].position.new = shapes[i].position;
         }
         let a = createVector(0, 0);
-        if (this.position.x < range/6) {
+        if (this.position.x < range / 6) {
             a.x += 0.01;
         }
-        if (this.position.x > windowWidth - range/6) {
+        if (this.position.x > windowWidth - range / 6) {
             a.x -= 0.01;
         }
-        if (this.position.y < range/6) {
+        if (this.position.y < range / 6) {
             a.y += 0.01;
         }
-        if (this.position.y > windowHeight - range/6) {
+        if (this.position.y > windowHeight - range / 6) {
             a.y -= 0.01;
         }
         a.add(this.separation(shapes));
 
         this.velocity.add(a);
         this.velocity.limit(0.1);
-        
+
         a.mult(0);
         let mouse = createVector(mouseX, mouseY);
         if (this.position.dist(mouse) < range * 2) {
@@ -114,23 +112,23 @@ class shape {
         }
         else if (this.shape == 'line') {
             push();
-                translate(this.position.x, this.position.y);
-                line(-this.r*cos(this.deg)/2, -this.r*sin(this.deg)/2, this.r*cos(this.deg)/2, this.r*sin(this.deg)/2);
+            translate(this.position.x, this.position.y);
+            line(-this.r * cos(this.deg) / 2, -this.r * sin(this.deg) / 2, this.r * cos(this.deg) / 2, this.r * sin(this.deg) / 2);
             pop();
         }
         else if (this.shape == 'square') {
             push();
-                translate(this.position.x, this.position.y);
-                rotate(this.deg);
-                square(0, 0, this.a);
+            translate(this.position.x, this.position.y);
+            rotate(this.deg);
+            square(0, 0, this.a);
             pop();
         }
         else if (this.shape == 'triangle') {
             push();
-                translate(this.position.x, this.position.y);
-                rotate(this.deg);
-                translate(-this.a/2, (this.a*sqrt(3)/2)*1/3);
-                triangle(0, 0, 0 + this.a, 0, 0 + (this.a / 2), 0 - (this.a*sqrt(3)/2));
+            translate(this.position.x, this.position.y);
+            rotate(this.deg);
+            translate(-this.a / 2, (this.a * sqrt(3) / 2) * 1 / 3);
+            triangle(0, 0, 0 + this.a, 0, 0 + (this.a / 2), 0 - (this.a * sqrt(3) / 2));
             pop();
         }
     }
@@ -139,10 +137,10 @@ class shape {
         let total = 0;
         for (let other of others) {
             let d = dist(
-            this.position.x,
-            this.position.y,
-            other.position.x,
-            other.position.y
+                this.position.x,
+                this.position.y,
+                other.position.x,
+                other.position.y
             );
             if (other != this && d < range) {
                 let difference = p5.Vector.sub(this.position, other.position);
