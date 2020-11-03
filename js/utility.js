@@ -20,13 +20,17 @@ function ending() {
 }
 
 function myLoop() {
-    if (getScroll() >= document.getElementById('body').clientHeight / 4) {
+    animations();
+}
+
+function animations() {
+    if (getScroll() >= document.getElementById('body').clientHeight / IDs.length) {
         document.getElementById(IDs[1]).style.cssText = 'transform: translate(-100vw, 0);';
     }
     else {
         document.getElementById(IDs[1]).style.cssText = '';
     }
-    if (getScroll() >= document.getElementById('body').clientHeight + document.getElementById('body').clientHeight / 4) {
+    if (getScroll() >= document.getElementById('body').clientHeight + document.getElementById('body').clientHeight / IDs.length) {
         document.getElementById(IDs[2]).style.cssText = 'transform: translate(100vw, 0);';
     }
     else {
