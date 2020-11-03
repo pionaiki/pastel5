@@ -1,44 +1,46 @@
 let IDs = ['intro', 'x1', 'x2', 'contact']
-let urlID = document.location.hash.substring(document.location.hash.indexOf('#') + 1);
 
-/*function mouseWheel(event) {
-    urlID = document.location.hash.substring(document.location.hash.indexOf('#') + 1);
-    let index = 0;
-    if (IDs.indexOf(urlID) > -1) {
-        index = IDs.indexOf(urlID);
-    }
-    if (index != IDs.length - 1 && event.deltaY > 0) {
-        document.location.hash = IDs[index + 1];
-    }
-    else if (index != 0 && event.deltaY < 0) {
-        document.location.hash = IDs[index - 1];
-    }
-}*/
+function urlID() {
+    return document.location.hash.substring(document.location.hash.indexOf('#') + 1);
+}
 
 function JSCheck() {
     return true;
 }
 
 function startup() {
-    //document.getElementById('body').style.overflow = 'hidden';
 
-    //Repositioning:
-    document.getElementById('intro').style.cssText = 'position: absolute; left: 0; top: 0';
-    document.getElementById('x1').style.cssText = 'position: absolute; left: 50vw; top: 100vh';
-    document.getElementById('x2').style.cssText = 'position: absolute; left: 0; top: 200vh';
-    document.getElementById('contact').style.cssText = 'position: absolute; left: 50vw; top: 300vh';
-
-    /*let originalID = urlID;
-    document.getElementById('html').style.cssText = 'scroll-behavior: auto;';
-    document.location.hash = 'intro';
-    document.getElementById('html').style.cssText = '';
-    if (IDs.indexOf(originalID) > 0) {
-        setTimeout(function(){
-            document.location.hash = originalID;
-        }, 400);
-    }*/
 }
 
-window.addEventListener('scroll', () => {
-    document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
-}, false);
+function ending() {
+    document.getElementById(IDs[1]).classList.add('right');
+    document.getElementById(IDs[2]).classList.add('left');
+
+    let myLoopInterval = setInterval('myLoop()', 20);
+}
+
+function myLoop() {
+    if (getScroll() >= document.getElementById('body').clientHeight / 4) {
+        document.getElementById(IDs[1]).style.cssText = 'transform: translate(-100vw, 0);';
+    }
+    else {
+        document.getElementById(IDs[1]).style.cssText = '';
+    }
+    if (getScroll() >= document.getElementById('body').clientHeight + document.getElementById('body').clientHeight / 4) {
+        document.getElementById(IDs[2]).style.cssText = 'transform: translate(100vw, 0);';
+    }
+    else {
+        document.getElementById(IDs[2]).style.cssText = '';
+    }
+}
+
+function getScroll(type) {
+    if (type == '%') {
+        return (
+            document.getElementById('body').scrollTop / (document.getElementById('body').scrollHeight - document.getElementById('body').clientHeight)
+        )
+    }
+    else {
+        return document.getElementById('body').scrollTop;
+    }
+}

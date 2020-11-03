@@ -58,6 +58,15 @@ canvas {
     margin: 0;
     width: 100vw;
     height: 100vh;
+
+    transition: transform 0.6s;
+    transition-timing-function: ease-in-out;
+}
+.left {
+    left: -100vw;
+}
+.right {
+    left: 100vw;
 }
 .medium {
     z-index: inherit;
