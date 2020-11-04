@@ -68,14 +68,23 @@ canvas {
 .right {
     left: 100vw;
 }
-.medium {
+.block {
     z-index: inherit;
     display: block;
     margin: 0;
     position: absolute;
+}
+.medium {
     width: 50vw;
     height: 60vh;
     left: 25vw;
+    top: 20vh;
+    background-color: hsla(300, 70%, 75%, 0.8);
+}
+.large {
+    width: 80vw;
+    height: 60vh;
+    left: 10vw;
     top: 20vh;
     background-color: hsla(300, 70%, 75%, 0.8);
 }
