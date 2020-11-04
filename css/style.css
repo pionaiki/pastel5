@@ -18,15 +18,14 @@ body {
     border-radius: 10px;
 }
 canvas {
-    z-index: 5;
+    z-index: 0;
     display: block;
-    overflow: hidden;
+    overflow: visible;
     position: fixed;
     left: 0;
     top: 0;
     margin: 0;
     width: 100vw;
-    height: 100vh;
 }
 
 .no-js-warning {
@@ -97,7 +96,7 @@ canvas {
     background-color: hsla(300, 70%, 75%, 0.8);
 }
 .footer {
-    z-index: 50; /*sec*/
+    z-index: 10;
     display: block;
     margin: 0;
     padding: 1vh;
@@ -109,7 +108,7 @@ canvas {
 }
 
 .scroll-map {
-    z-index: 40;
+    z-index: 20;
     position: fixed;
     top: 0;
     right: 0;
