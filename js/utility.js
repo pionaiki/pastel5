@@ -43,8 +43,8 @@ function animations() {
     else {
         document.getElementById(IDs[2]).style.cssText = '';
     }
-    if (getScroll() + document.getElementById('body').clientHeight >= 3.2 * document.getElementById('body').clientHeight) {
-        document.getElementById('scroll-map').style.cssText = 'position: absolute; top: 220vh;';
+    if (getScroll() + document.getElementById('body').clientHeight >= 3.1 * document.getElementById('body').clientHeight) {
+        document.getElementById('scroll-map').style.cssText = 'position: absolute; top: 210vh;';
     }
     else {
         document.getElementById('scroll-map').style.cssText = '';
