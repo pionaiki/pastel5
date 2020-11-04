@@ -97,15 +97,37 @@ canvas {
     background-color: hsla(300, 70%, 75%, 0.8);
 }
 .footer {
-    z-index: 50;
+    z-index: 50; /*sec*/
     display: block;
     margin: 0;
     padding: 1vh;
     position: absolute;
-    bottom: -18vh;
+    bottom: -40vh;
     width: 100vw;
     height: 18vh;
     background-color: #1f1f1f;
+}
+
+.scroll-map {
+    z-index: 40;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    margin: 0;
+}
+.scroll-map div {
+    position: absolute;
+    right: 0;
+    width: 64px;
+    margin: 0;
+    color: #7c7c7c;
+}
+.scroll-map hr {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    margin: 0;
 }
 
 p {
