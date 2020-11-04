@@ -5,7 +5,7 @@ let bgColor;
 let scrollDelta;
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    let background = createCanvas(windowWidth, windowHeight);
     rectMode(CENTER);
 
     colorMode(RGB, 255);

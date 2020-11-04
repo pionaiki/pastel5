@@ -1,4 +1,4 @@
-let IDs = ['intro', 'x1', 'x2', 'contact']
+let IDs = ['intro', 'x1', 'x2']
 
 function urlID() {
     return document.location.hash.substring(document.location.hash.indexOf('#') + 1);

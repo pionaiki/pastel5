@@ -18,6 +18,7 @@ body {
     border-radius: 10px;
 }
 canvas {
+    z-index: 5;
     display: block;
     overflow: hidden;
     position: fixed;
@@ -74,6 +75,13 @@ canvas {
     margin: 0;
     position: absolute;
 }
+.small {
+    width: 20vw;
+    height: 60vh;
+    left: 50vw;
+    top: 20vh;
+    background-color: hsla(300, 70%, 75%, 0.8);
+}
 .medium {
     width: 50vw;
     height: 60vh;
@@ -87,6 +95,17 @@ canvas {
     left: 10vw;
     top: 20vh;
     background-color: hsla(300, 70%, 75%, 0.8);
+}
+.footer {
+    z-index: 50;
+    display: block;
+    margin: 0;
+    padding: 1vh;
+    position: absolute;
+    bottom: -18vh;
+    width: 100vw;
+    height: 18vh;
+    background-color: #1f1f1f;
 }
 
 p {
