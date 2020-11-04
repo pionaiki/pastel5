@@ -2,6 +2,11 @@ let IDs = ['intro', 'x1', 'x2', 'contact']
 var rulesIndex;
 var styleBySelector = {};
 
+var myname = 'martha';
+var surname = 'sokolska';
+var atat = '@'
+var mailserver = 'pionaiki.com'
+
 function urlID() {
     return document.location.hash.substring(document.location.hash.indexOf('#') + 1);
 }
@@ -48,10 +53,12 @@ function animations() {
         if (getScroll() + document.getElementById('body').clientHeight >= 3.2 * document.getElementById('body').clientHeight) {
             styleBySelector['canvas'].position = 'absolute';
             styleBySelector['canvas'].top = '220vh';
+            document.getElementById('scroll-map').style.cssText = 'position: absolute; top: 220vh;';
         }
         else {
             styleBySelector['canvas'].position = 'fixed';
             styleBySelector['canvas'].top = '0';
+            document.getElementById('scroll-map').style.cssText = '';
         }
     }
 }
