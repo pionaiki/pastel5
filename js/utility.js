@@ -16,12 +16,7 @@ function JSCheck() {
 }
 
 function startup() {
-    rulesIndex = document.styleSheets[0].rules || document.styleSheets[0].cssRules;
 
-    for (var i = 0; i < rulesIndex.length; i++) {
-        styleBySelector[rulesIndex[i].selectorText] = rulesIndex[i].style;
-    }
-    //styleBySelector['canvas'].position = 'absolute';
 }
 
 function ending() {
@@ -48,18 +43,11 @@ function animations() {
     else {
         document.getElementById(IDs[2]).style.cssText = '';
     }
-
-    if (styleBySelector.canvas) {
-        if (getScroll() + document.getElementById('body').clientHeight >= 3.2 * document.getElementById('body').clientHeight) {
-            styleBySelector['canvas'].position = 'absolute';
-            styleBySelector['canvas'].top = '220vh';
-            document.getElementById('scroll-map').style.cssText = 'position: absolute; top: 220vh;';
-        }
-        else {
-            styleBySelector['canvas'].position = 'fixed';
-            styleBySelector['canvas'].top = '0';
-            document.getElementById('scroll-map').style.cssText = '';
-        }
+    if (getScroll() + document.getElementById('body').clientHeight >= 3.2 * document.getElementById('body').clientHeight) {
+        document.getElementById('scroll-map').style.cssText = 'position: absolute; top: 220vh;';
+    }
+    else {
+        document.getElementById('scroll-map').style.cssText = '';
     }
 }
 
