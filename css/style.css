@@ -179,3 +179,35 @@ h1 {
     left: 50%;
     filter: invert(100);
 }
+
+.projects-showcase {
+    width: 90vw;
+    height: 90vh;
+    left: 5vw;
+    top: 5vh;
+    background-color: hsla(0, 0%, 12.2%, 0.6);
+    overflow-x: auto;
+}
+.projects-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 100%;
+}
+.projects-container .project {
+    position: absolute;
+    top: 0;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    width: 50vh;
+    height: 80%;
+}
+.projects-container .project img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
