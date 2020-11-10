@@ -61,3 +61,7 @@ function getScroll(type) {
         return document.getElementById('body').scrollTop;
     }
 }
+
+function onscroll() {
+    document.getElementById('rss').contentWindow.location.reload();
+}
