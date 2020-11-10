@@ -1,4 +1,4 @@
-let IDs = ['intro', 'x1', 'projects', 'contact']
+let IDs = ['intro', 'me', 'projects', 'contact']
 var rulesIndex;
 var styleBySelector = {};
 

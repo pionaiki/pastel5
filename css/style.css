@@ -76,9 +76,7 @@ canvas {
     position: absolute;
 }
 .small {
-    width: 20vw;
-    height: 60vh;
-    left: 50vw;
+    width: 40vw;
     top: 20vh;
     background-color: hsla(300, 70%, 75%, 0.8);
 }
@@ -162,8 +160,22 @@ p {
 h1 {
     color: #f0f8ff;
     margin: 0;
-    font-size: 6vw;
 }
+ul {
+    color: #f0f8ff;
+    font-size: 1.6vw;
+}
+li {
+    margin-top: 2vh;
+}
+.no-li-margin li {
+    margin-top: 0;
+}
+.rating {
+    position: absolute;
+    left: 50%;
+}
+
 .center-y {
     margin: 0;
     position: absolute;
