@@ -1,0 +1,239 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #f0f8ff;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #bbbbbb;
+    border-radius: 10px;
+}
+canvas {
+    z-index: 0;
+    display: block;
+    overflow: visible;
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 100vw;
+}
+
+.no-js-warning {
+    z-index: 20;
+    display: block;
+    position: fixed;
+    left: 2vh;
+    top: 2vh;
+    background-color: hsla(360, 100%, 70%, 1);
+    color: #f0f8ff;
+    padding: 10px;
+    border-radius: 100vh;
+}
+.container {
+    z-index: 10;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 100vw;
+    min-height: 100vh;
+}
+.slide {
+    z-index: inherit;
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+
+    transition: transform 0.6s;
+    transition-timing-function: ease-in-out;
+}
+.left {
+    left: -100vw;
+}
+.right {
+    left: 100vw;
+}
+.block {
+    z-index: inherit;
+    display: block;
+    margin: 0;
+    position: absolute;
+}
+.small {
+    width: 40vw;
+    top: 20vh;
+    background-color: hsla(300, 70%, 75%, 0.8);
+}
+.medium {
+    width: 50vw;
+    height: 60vh;
+    left: 25vw;
+    top: 20vh;
+    background-color: hsla(300, 70%, 75%, 0.8);
+}
+.large {
+    width: 80vw;
+    height: 60vh;
+    left: 10vw;
+    top: 20vh;
+    background-color: hsla(300, 70%, 75%, 0.8);
+}
+.footer {
+    z-index: 20;
+    display: block;
+    margin: 0;
+    padding: 2vh;
+    position: absolute;
+    bottom: -30vh;
+    width: 100vw;
+    height: 16vh;
+    background-color: #1f1f1f;
+}
+.footer p {
+    margin: 0;
+    color: #b0b0b0;
+    font-size: 28;
+}
+.footer a {
+    color: #b0b0b0;
+    text-decoration: none;
+}
+.footer .notes {
+    position: absolute;
+    bottom: 2vh;
+    margin: 0;
+    color: #7c7c7c;
+    font-size: 14;
+}
+.footer .links {
+    display: block;
+    position: absolute;
+    top: 2vh;
+    right: 8vh;
+}
+.footer .links a {
+    margin-left: 1vh;
+}
+
+.scroll-map {
+    z-index: 15;
+    position: fixed;
+    top: 0;
+    left: 99.5vw;
+    height: 100vh;
+    margin: 0;
+}
+.scroll-map div {
+    position: absolute;
+    right: 0;
+    width: 64px;
+    margin: 0;
+    color: #7c7c7c;
+}
+.scroll-map hr {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    margin: 0;
+}
+
+p {
+    color: #f0f8ff;
+    font-size: 1vw;
+}
+h1 {
+    color: #f0f8ff;
+    margin: 0;
+}
+ul {
+    color: #f0f8ff;
+    font-size: 1.6vw;
+}
+li {
+    margin-top: 2vh;
+}
+.no-li-margin li {
+    margin-top: 0;
+}
+.rating {
+    position: absolute;
+    left: 50%;
+}
+
+.center-y {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.logo {
+    position: absolute;
+    height: 20vh;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    filter: invert(100);
+}
+
+.projects-showcase {
+    width: 90vw;
+    height: 90vh;
+    left: 5vw;
+    top: 5vh;
+    background-color: hsla(0, 0%, 5%, 0.8);
+    overflow-x: auto;
+}
+.projects-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 100%;
+}
+.projects-container .project {
+    position: absolute;
+    top: 0;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    width: 50vh;
+    height: 80%;
+    overflow: hidden;
+}
+.projects-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.92;
+    transition-duration: 0.14s;
+    
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: 0.14s ease-in-out;
+	transition: 0.14s ease-in-out;
+}
+.projects-thumb:hover {
+    opacity: 1;
+    -webkit-transform: scale(1.04);
+	transform: scale(1.04);
+}

@@ -1,40 +1,183 @@
-<html>
-    <head>
-        <title>Martha Sokolska</title>
-        <meta name="description" content="Martha Sokolska - high school student. Programming, photography" />
+<meta charset='UTF-8'>
+<html id='html'>
 
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-        <link rel="stylesheet" type="text/css" href="terminal_by_pionaiki.css">
-    </head>
+<head>
+    <title>Martha Sokolska</title>
+    <link rel='shortcut icon' type='image/x-icon' href='assets/logo/gradient.svg'>
+    <link rel='stylesheet' type='text/css' href='css/style.css'>
+    <script>
+        if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
+            alert('Mobile version in production.'); //Production
+            window.location = 'https://m.pionaiki.com';
+        }
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js'></script>
+    <script>
+        if (!window.p5) {
+            console.info('Cannot connect to CDN, using self-hosted js file.');
+            document.write("<script src='js/p5.min.js'><\/script>");
+        }
+    </script>
+    <script>window.p5 || console.error('Cannot load p5.min.js')</script>
+    <script src='js/background.js'></script>
+    <script src='js/utility.js'></script>
+</head>
 
-    <body>
+<body id='body'>
+    <div class='no-js-warning' id='no-js-warning'>
+        Please enable javascript
+    </div>
+    <script>
+        if (JSCheck()) {
+            document.getElementById('no-js-warning').remove();
+        }
+    </script>
+    <div class='container' id='container'>
+        <div class='slide' id='intro'>
+            <div class='block medium'>
+                <!--<img src='assets/logo/black_no-name.svg' class='logo' style='top: 2vh;'>-->
+                <div class="center-y">
+                    <center>
+                        <p>
+                        <h1 style='font-size: 6vw;'><u>Martha Sokolska</u></h1>
+                        <p style='letter-spacing: 0.4vw;'>HIGH SCHOOL STUDENT, PROGRAMMER</p>
+                        </p>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class='slide' id='me'>
+            <div class='block small' style='left: 8vw;'>
+                <center>
+                    <h1 style='font-size: 4vw; margin: 1vw;'>
+                        Skills:
+                    </h1>
+                </center>
+                <div style='width: 100%'>
+                    <div class='no-li-margin'>
+                        <ul>
+                            <li>
+                                English
+                                <span class='rating'>■■■■■■■□□□</span>
+                            </li>
+                            <li>
+                                Polish
+                                <span class='rating'>■■■■■■■■■■</span>
+                            </li>
+                            <br>
+                            <li>
+                                Photography
+                                <span class='rating'>■■■■■■■□□□</span>
+                            </li>
+                            <li>
+                                Film Editing
+                                <span class='rating'>■■■□□□□□□□</span>
+                            </li>
+                            <br>
+                            <li>
+                                C++
+                                <span class='rating'>■■■□□□□□□□</span>
+                            </li>
+                            <li>
+                                JavaScript
+                                <span class='rating'>■■■□□□□□□□</span>
+                            </li>
+                            <li>
+                                HTML, CSS
+                                <span class='rating'>■■□□□□□□□□</span>
+                            </li>
+                            <br>
+                            <li>
+                                Inline Skates
+                                <span class='rating'>■■■■■■■■□□</span>
+                            </li>
+                            <!--
+                                <li>
+                                {thing}
+                                <span class='rating'>■□</span>
+                            </li>
+                            -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class='block small' style='left: 52vw;'>
+                <center>
+                    <h1 style='font-size: 4vw; margin: 1vw;'>
+                        Education:
+                    </h1>
+                </center>
+                <div>
+                    <ul id='edu'>
+                        <li><i>Currently:</i> VI Tadeusz Reytan High School in Warsaw</li>
+                        <li>[2019] Bilingual Middle School No. 103 in Warsaw</li>
+                        <li>[2016] Primary School No. 128 in Warsaw</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class='slide' id='projects'>
+            <div class='block projects-showcase'>
+                <div class='projects-container'>
+                    <div class='project' style='left: calc(0*60vh);'>
+                        <a href='https://projects.pionaiki.com/rss' title='[unfinished]'>
+                            <img src='assets/projects/retro-space-shooter.png' alt='Retro Space Shooter thumbnail'
+                                class='projects-thumb'>
+                        </a>
+                    </div>
+                    <div class='project' style='left: calc(1*60vh);'>
+                        <div style='position: absolute; bottom: -6%;'>
+                            <p style='font-size: 4vh; opacity: 0.4;'>
+                                More To Come...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='footer' id='contact'>
+            <p style='color: #7c7c7c; font-size: 24;'> Mail me:
+                <script>document.write("<a href='mailto:" + myname + '.' + surname + atat + mailserver + "'>" + myname + '.' + surname + atat + mailserver + "</a>")</script>
+            </p>
+            <div class='links'>
+                <a href='https://www.linkedin.com/in/pionaiki/'>
+                    <img src='assets/links/LI-Logo.png' style='height: 3vh;'>
+                </a>
+                <a href='https://github.com/pionaiki/'>
+                    <img src='assets/links/GitHub_Logo_White.png' style='height: 3vh;'>
+                </a>
+                <a href='https://mal.pionaiki.com' title='My Anime List'>
+                    <img src='assets/links/MAL.png' style='border-radius: 4px; height: 3vh;'>
+                </a>
+            </div>
+            <p class='notes'>
+                Website designed by <i>Martha Sokolska</i>.<br>
+                Libraries used: <a href='https://p5js.org'>p5.js</a>.<br>
+                <a href='https://github.com/pionaiki/pionaiki/'>Source code</a> on GitHub.
+            </p>
+        </div>
+        <div id='scroll-map' class='scroll-map'>
+            <div style='top: calc(100*100vh/360)'>
+                intro
+                <hr>
+            </div>
+            <div style='top: calc(205*100vh/360)'>
+                me
+                <hr>
+            </div>
+            <div style='top: calc(315*100vh/360)'>
+                projects
+                <hr>
+            </div>
+            <div style='top: 96vh'>
+                contact
+                <hr>
+            </div>
+        </div>
+    </div>
+    <script>
+        ending();
+    </script>
+</body>
 
-        <h1>
-            <font class="who">guest@personal-website:</font> 
-            <font class="where">/</font>$ 
-            pnk info
-        </h1>
-
-        <p class="no-user"><i class="info">name:</i> Martha Sokolska</p>
-        <p class="no-user"><i class="info">location:</i> Warsaw, Poland</p>
-        <p class="no-user"><i class="info">status:</i> Busy in school probably</p>
-
-        <h1>
-            <font class="who">guest@personal-website:</font> 
-            <font class="where">/</font>$ 
-            ls -l
-        </h1>
-
-        <p><a class="folder" href="contact">contact</a></p>
-        <!--<p><a class="folder" href="stuff_i_do">stuff_i_do</a></p>!-->
-        <p><a class="folder" href="education">education</a></p>
-        <!--<p><a class="folder" href="my_projects">my_projects</a></p>!-->
-
-        <h1>
-            <font class="who">guest@personal-website:</font> 
-            <font class="where">/</font>$ 
-            <b class="cursor"></b>
-        </h1>
-
-    </body>
 </html>
