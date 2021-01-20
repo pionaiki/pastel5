@@ -1,0 +1,131 @@
+<meta charset="UTF-8">
+<html>
+
+<head>
+  <title>We Have Known Each Other For...</title>
+  <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+  <script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    var data = {
+      "people": [
+        {
+          "name": "Martha",
+          "birth": {
+            "date": "2003-09-06",
+            "time": "19:05:00.000",
+            "timezone": "+02:00"
+          },
+          "meeting": {
+            "date": "2003-09-06",
+            "time": "19:05:00.000",
+            "timezone": "+02:00"
+          }
+        },
+        {
+          "name": "Laura",
+          "birth": {
+            "date": "2004-02-16",
+            "time": "15:30:00.000",
+            "timezone": "+01:00"
+          },
+          "meeting": {
+            "date": "2016-09-01",
+            "time": "10:00:00.000",
+            "timezone": "+02:00"
+          }
+        }
+      ]
+    }
+    function loadDate(object) {
+      var date = new Date(object.date + "T" + object.time + object.timezone);
+      return date;
+    }
+    function searchName(name) {
+      for (var i = 0; i < data.people.length; i++) {
+        if (data.people[i].name.toLowerCase() == name.toLowerCase()) {
+          return i;
+        }
+      }
+    }
+    function compareDates(date1, date2) {
+      return Math.abs(date1 - date2);
+    }
+    function age(name) {
+      return compareDates(loadDate(data.people[searchName(name)].birth), Date.now());
+    }
+    function sinceMeeting(name) {
+      return compareDates(loadDate(data.people[searchName(name)].meeting), Date.now());
+    }
+    function percentDates(base, time) {
+      return time / base;
+    }
+    function update(who) {
+      document.getElementById("MeYou").textContent = (percentDates(age("Martha"), sinceMeeting(who)) * 100).toFixed(10);
+      document.getElementById("YouMe").textContent = (percentDates(age(who), sinceMeeting(who)) * 100).toFixed(10);
+    }
+  </script>
+  <style>
+    body {
+      min-width: 100vw;
+      min-height: 100vh;
+      overflow: hidden;
+      background: #D627CA;
+      background: -webkit-linear-gradient(top left, #D627CA, #D98545);
+      background: -moz-linear-gradient(top left, #D627CA, #D98545);
+      background: linear-gradient(to bottom right, #D627CA, #D98545);
+    }
+
+    p {
+      font-size: 5vh;
+      font-family: Abel, Verdana, Consolas;
+    }
+
+    span {
+      font-weight: bold;
+      font-family: monospace;
+    }
+
+    .updt {
+      background: linear-gradient(to right, #000000ff, 90%, #00000000);
+      background-clip: text;
+      color: transparent;
+    }
+
+    .center-y {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    if (!searchName(urlParams.get("p"))) {
+      alert("Whoopsie! Something went wrong...\nAsk Martha what's going on <3");
+      location = "https://pionaiki.com";
+    }
+  </script>
+  <center>
+    <div class="center-y">
+      <p><b>Hey
+          <script>document.write(urlParams.get("p"));</script>
+        </b></p>
+      <p>You have known me for<br>
+        <span id="YouMe" class="updt"></span><br>
+        % of Your life.
+      </p>
+      <p>I have known You for<br>
+        <span id="MeYou" class="updt"></span><br>
+        % of my life.
+      </p>
+    </div>
+  </center>
+  <script>update(urlParams.get("p")); setInterval(function () { update(urlParams.get("p")); }, 0);</script>
+</body>
+
+</html>
